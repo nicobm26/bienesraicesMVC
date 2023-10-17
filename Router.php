@@ -30,7 +30,7 @@ class Router {
             // echo "EL objeto this"; echo '<pre>';var_dump($this);echo '</pre>';echo '<br>';
             call_user_func($funcion, $this);
             // call_user_func(callable, parametros opcionales)
-            //callable -> Puede ser el nombre de la función como una cadena, un array con un objeto y un nombre de método, o una función anónima.
+            //callable -> Puede ser el nombre de la función como una cadena, un array con un objeto y un nombre de método, o una función anónima. En este caso , un arreglo: controlador, metodo
             // Parámetros opcionales que se pueden pasar a la función que se va a llamar.
         }else{
             debugear("error 404");
@@ -39,6 +39,14 @@ class Router {
 
     // Muestra una vista
     public function mostrarVista($view) {
-        include __DIR__ . "/views/$view.php";
+
+        ob_start(); //Almacenamiento en memoria durante un rato
+
+        include __DIR__ . "/views/$view.php";  //Este archivo queda en memoria
+
+        $contenido = ob_get_clean();  //Limpiamos lo que esta en memoria Buffer
+
+
+        include __DIR__ . "/views/layout.php";
     }
 }
