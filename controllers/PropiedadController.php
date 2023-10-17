@@ -1,10 +1,14 @@
 <?php
 
 namespace Controllers;
+use MVC\Router;
 
 class PropiedadController{
-    public static function index(){
-        echo "index";
+    // public static function index(Router $router){
+        public static function index(Router $router){
+        // debugear($router);
+        // echo '<pre>'; var_dump($router);  echo '</pre>';
+        $router->mostrarVista("propiedades/admin");
     }
 
     public static function crear(){
