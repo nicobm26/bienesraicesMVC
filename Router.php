@@ -9,6 +9,8 @@ class Router {
 
     public function get($url, $funcion){
         $this->rutasGet[$url] = $funcion;
+        // echo "la url es " . $url;echo '<br>';
+        // echo '<pre>';var_dump($funcion);echo '</pre>';
     }
 
     public function comprobarRutas(){
@@ -23,7 +25,9 @@ class Router {
 
         if($funcion){
             // La url existe y hay una funcion asociada
-            debugear($funcion);
+            // debugear($funcion);
+            echo '<pre>';var_dump($funcion);echo '</pre>';
+            echo '<pre>';var_dump($this);echo '</pre>';echo '<br>';
             call_user_func($funcion, $this);
         }else{
             debugear("error 404");
