@@ -1,0 +1,21 @@
+{
+    "name": "nicolas/bienesraices",
+    "description": "Creando un proyecto con POO",
+    "type": "project",
+    "authors": [
+        {
+            "name": "nicolasb",
+            "email": "nicolasbotello@hotmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Model\\" : "./models",
+            "MVC\\" : "./",
+            "Controllers\\" : "./controllers"
+        }
+    },
+    "require": {
+        "intervention/image": "^2.7"
+    }
+}

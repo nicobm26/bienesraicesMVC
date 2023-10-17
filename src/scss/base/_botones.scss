@@ -1,0 +1,38 @@
+.boton-amarillo{
+    @include boton($amarillo, inline-block);
+}
+
+.boton-amarillo-block{
+    @include boton($amarillo, block);
+}
+
+.boton-amarillo-inlineBlock{
+    @include boton($amarillo, inline-block);
+    min-width: 2.9rem;
+    border-radius: 1rem;
+}
+
+.boton-verde{
+    @include boton($verde, block);
+    margin: 2.5rem auto;
+    max-width: 90%;
+    border-radius: 2rem;
+    @include tablet{
+        max-width: 50rem;
+    }
+}
+
+.boton-rojo-block{
+    @include boton($rojo, block);
+    width:100%;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.boton-verde-block{
+    @include boton($verde, block);
+}
+
+.boton-verde-inlineBlock{
+    @include boton($verde, inline-block);
+}

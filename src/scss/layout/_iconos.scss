@@ -1,0 +1,18 @@
+
+
+@include tablet{
+    .iconos-nosotros{
+        @include grid(3,2.5rem);
+    }
+}
+
+
+.icono{
+    text-align: center; //Tener el h3 y texto ubicados dentro de icono centrados
+    img{
+        height: 10rem;
+    }
+    h3{
+        text-transform: uppercase;
+    }
+}
