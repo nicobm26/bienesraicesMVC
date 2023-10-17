@@ -7,8 +7,9 @@ class PropiedadController{
     // public static function index(Router $router){
         public static function index(Router $router){
         // debugear($router);
-        // echo '<pre>'; var_dump($router);  echo '</pre>';
-        $router->mostrarVista("propiedades/admin");
+        $router->mostrarVista("propiedades/admin", [ 
+            "mensaje" => "LO que me mataaa es cuando te pones bellacaa yieee"]);
+
     }
 
     public static function crear(){

@@ -38,14 +38,18 @@ class Router {
     }
 
     // Muestra una vista
-    public function mostrarVista($view) {
+    public function mostrarVista($view, $datos=[]) {
 
+        // $$ -> crear una variable con el nombre de key del arreglo
+        foreach ($datos as $key => $value) {
+            $$key = $value;
+        }
+        
         ob_start(); //Almacenamiento en memoria durante un rato
 
         include __DIR__ . "/views/$view.php";  //Este archivo queda en memoria
 
         $contenido = ob_get_clean();  //Limpiamos lo que esta en memoria Buffer
-
 
         include __DIR__ . "/views/layout.php";
     }
