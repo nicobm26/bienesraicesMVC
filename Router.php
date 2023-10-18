@@ -9,8 +9,11 @@ class Router {
 
     public function get( string $url, array $funcion){
         $this->rutasGet[$url] = $funcion;
-        // echo "la url es " . $url;echo '<br>';
-        // echo '<pre>';var_dump($funcion);echo '</pre>';
+        // echo "la url es " . $url;echo '<br>'; // echo '<pre>';var_dump($funcion);echo '</pre>';
+    }
+
+    public function post( string $url, array $funcion){
+        $this->rutasPost[$url] = $funcion;
     }
 
     public function comprobarRutas(){
@@ -20,6 +23,8 @@ class Router {
         if($metodo === "GET"){
             $funcion = $this->rutasGet[$urlActual] ?? null;
             // debugear($this->rutasGet);
+        }else if( $metodo === "POST"){
+            $funcion = $this->rutasPost[$urlActual] ?? null;
         }
 
 
