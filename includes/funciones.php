@@ -1,23 +1,14 @@
-<!-- Algunas funciones que vamos a reutilizar en varios templates -->
-
 <?php 
-
-// require 'app.php'; Ya no es necesario, porque desde app.php, estoy mandadndo a llamar este archivo
-
 
 //constante   define (nombre , valor);
 define('TEMPLATES_URL', __DIR__ . '/templates');
 define('FUNCIONES_URL',  __DIR__ . 'funciones.php');
-define('CARPETA_IMAGENES', __DIR__ . '/../imagenes/');
+define('CARPETA_IMAGENES', $_SERVER["DOCUMENT_ROOT"] . "/imagenes/");
 
 
 function incluirTemplate( string $nombre , bool $inicio = false){
-    // include "includes/templates/{$nombre}.php";  SI SIRVE, al parece toca desde la raiz del proyeco
-    // include "templates/{$nombre}/.php"; NO sirveee
-    // echo TEMPLATES_URL . "/{$nombre}.php";
     include   TEMPLATES_URL . "/{$nombre}.php";
 }
-
 
 function estaAutenticado() {
     session_start();
