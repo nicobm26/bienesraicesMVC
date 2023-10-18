@@ -5,7 +5,7 @@
                 <input 
                     type="text" 
                     id="titulo" 
-                    name="titulo" 
+                    name="propiedad[titulo]" 
                     placeholder="Titulo Propiedad" 
                     value="<?php echo s($propiedad->titulo);?>">
 
@@ -13,7 +13,7 @@
                 <input 
                     type="number" 
                     id="precio" 
-                    name="precio" 
+                    name="propiedad[precio]" 
                     placeholder="Precio Propiedad" 
                     value="<?php echo s($propiedad->precio);?>">                
 
@@ -21,7 +21,7 @@
                 <input 
                     type="file" 
                     id="imagen" 
-                    name="imagen" 
+                    name="propiedad[imagen]" 
                     accept="image/jpeg, image/png">
                     
                 <?php if ($propiedad->imagen && file_exists(CARPETA_IMAGENES . $propiedad->imagen)): ?>
@@ -29,7 +29,7 @@
                     <img src="/imagenes/<?php echo $propiedad->imagen ?>" class="imagen-small" alt="Imagen subida">
                 <?php endif ?>  
                 <label for="descripcion">Descripcion</label>
-                <textarea id="descripcion" name="descripcion"> <?php echo s($propiedad->descripcion); ?> </textarea>  
+                <textarea id="descripcion" name="propiedad[descripcion]"> <?php echo s($propiedad->descripcion); ?> </textarea>  
             </fieldset>
 
             <fieldset>
@@ -39,7 +39,7 @@
                 <input 
                     type=number" 
                     id="habitaciones" 
-                    name="habitaciones" 
+                    name="propiedad[habitaciones]" 
                     placeholder="Ej: 3" 
                     min="1" 
                     max="20" 
@@ -49,7 +49,7 @@
                 <input 
                     type=number" 
                     id="wc" 
-                    name="wc" 
+                    name="propiedad[wc]" 
                     placeholder="Ej: 3" 
                     min="1" 
                     max="20" 
@@ -59,7 +59,7 @@
                 <input 
                     type=number" 
                     id="estacionamiento" 
-                    name="estacionamiento" 
+                    name="propiedad[estacionamiento]" 
                     placeholder="Ej: 3" 
                     min="1" 
                     max="20" 
@@ -70,7 +70,7 @@
                 <legend>Vendedor</legend>
 
                 <label for="vendedor">Vendedor</label>
-                <select name="vendedorId" id="vendedor">
+                <select name="propiedad[vendedorId]" id="vendedor">
                     <option value="">--Seleccionar--</option>
                     <?php foreach($vendedores as $vendedor ) : ?>
                         <option 
