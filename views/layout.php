@@ -16,21 +16,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienes Raices</title>
-    <link rel="stylesheet" href="build/css/app.css">
+    <link rel="stylesheet" href="../build/css/app.css">
 </head>
 <body>
     <header class="header  <?php echo  $inicio ? 'inicio': ''; ?>">
         <div class="contenedor contenido-header">
             <div class="barra">
                 <a href="/index.php">
-                    <img src="build/img/logo.svg" alt="Logotipo de bienes raices" class="logo">
+                    <img src="../build/img/logo.svg" alt="Logotipo de bienes raices" class="logo">
                 </a>
 
                 <div class="mobile-menu">
-                    <img src="build/img/barras.svg" alt="Icono menu responsive">
+                    <img src="../build/img/barras.svg" alt="Icono menu responsive">
                 </div>
                 <div class="derecha">
-                    <img src="build/img/dark-mode.svg" class="dark-mode-boton" alt="Dark mode boton">
+                    <img src="../build/img/dark-mode.svg" class="dark-mode-boton" alt="Dark mode boton">
                     <nav class="navegacion">
                         <a href="/nosotros.php">Nosotros</a>
                         <a href="/anuncios.php">Anuncios</a>
@@ -63,6 +63,6 @@
         <p class="copyrigth">Toodos los derehos reservados. <?php echo date('Y'); ?> &copy;</p>
     </footer>
 
-    <script src="build/js/bundle.min.js"></script>
+    <script src="../build/js/bundle.min.js"></script>
 </body>
 </html>
