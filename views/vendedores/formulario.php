@@ -6,7 +6,7 @@
     <input 
         type="text" 
         id="nombre" 
-        name="nombre" 
+        name="vendedor[nombre]" 
         placeholder="Nombres" 
         value="<?php echo s($vendedor->nombre);?>">
 
@@ -14,7 +14,7 @@
     <input 
         type="text" 
         id="apellido" 
-        name="apellido" 
+        name="vendedor[apellido]" 
         placeholder="Apellidos" 
         value="<?php echo s($vendedor->apellido);?>">         
                
@@ -28,7 +28,7 @@
     <input 
         type="tel" 
         id="telefono" 
-        name="telefono" 
+        name="vendedor[telefono]" 
         placeholder="Telefono" 
         value="<?php echo s($vendedor->telefono);?>">    
         
