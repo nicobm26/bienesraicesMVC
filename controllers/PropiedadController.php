@@ -34,8 +34,6 @@ class PropiedadController{
   
             $propiedad = new Propiedad($_POST['propiedad']);
             
-            // debugear($_FILES);
-            $image = null;
             //Genera un nombre unico
             $nombreImagen = md5( uniqid( rand(), true) ) . ".jpg";
 
@@ -74,11 +72,47 @@ class PropiedadController{
     }
 
     public static function actualizar(Router $router){
+        
+        // Función que valida un parámetro de ID obtenido de la URL y redirecciona si no es un entero válido.
         $id = validarORedireccionar("/admin");
 
-        $errores = Propiedad::getErrores();
+        // Obtener los datos de la propiedad
         $propiedad = Propiedad::findById($id);
+
+        // Consultar para obtener los vendedores
         $vendedores = Vendedor::all();
+
+        // Arreglo con mensajes de errores
+        $errores = Propiedad::getErrores();
+
+        if($_SERVER["REQUEST_METHOD"] == "POST"){
+            // debugear($_POST);
+            $args = $_POST['propiedad'];
+    
+            $propiedad->sincronizar($args);
+            // debugear($propiedad);
+
+            // Validación
+            $errores = $propiedad->validar();
+     
+            //Genera un nombre unico
+            $nombreImagen = md5( uniqid( rand(), true) ) . ".jpg";
+    
+            if($_FILES['propiedad']['tmp_name']['imagen']){
+                $image = Image::make($_FILES['propiedad']['tmp_name']['imagen'])->fit(800,600);
+                $propiedad->setImagen($nombreImagen);
+            }
+            
+            //revisar que el arreglo de errores este vacio
+            if(empty($errores)){
+                // Realiza el resize con intervention  Y Setear la imagen
+                if($_FILES['propiedad']['tmp_name']['imagen']){
+                    $image->save(CARPETA_IMAGENES . $nombreImagen);
+                }
+                
+                $propiedad->guardar();
+            }
+        }
         
         $router->mostrarVista('propiedades/actualizar',[
             'propiedad' => $propiedad,
