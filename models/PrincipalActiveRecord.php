@@ -187,7 +187,7 @@ class PrincipalActiveRecord{
         $sanitizado = [];
 
         foreach ($atributos as $key => $value) {
-            $sanitizado[$key] = self::$bd->escape_string($value);
+            $sanitizado[$key] = self::$bd->escape_string(trim($value));
         }
         // debugear($atributos);
         // debugear($sanitizado);
