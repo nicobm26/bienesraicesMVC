@@ -56,6 +56,7 @@ function mostrarNotificacion($codigo){
     return $mensaje;
 }
 
+// Función que valida un parámetro de ID obtenido de la URL y redirecciona si no es un entero válido.
 function validarORedireccionar(string $url){
     $id = $_GET["id"];
     $id = filter_var($id, FILTER_VALIDATE_INT);
