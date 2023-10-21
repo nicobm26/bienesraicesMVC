@@ -7,7 +7,7 @@
             <?php echo $error; ?>
         </div>
     <?php } ?>
-    <form action="/admin/vendedores/crear.php" method="post" class="formulario" enctype="multipart/form-data">
+    <form action="/vendedor/crear" method="post" class="formulario" enctype="multipart/form-data">
         <?php require_once __DIR__ . '/formulario.php'; ?>
 
         <input type="submit" value="Registrar Vendedor" class="boton-verde">
