@@ -4,7 +4,7 @@
     if($resultado){
         $notificacion = mostrarNotificacion(intval($resultado));
         if ($notificacion) { ?>
-            <p class="alerta exito"><?php echo s($notificacion) ?></p>
+            <p class="alerta exito" id="notificacionCrud"><?php echo s($notificacion) ?></p>
             <?php   
         }
     } ?>
@@ -30,7 +30,7 @@
                     <td> <img src="/imagenes/<?php echo $propiedad->imagen ?> " alt="imagen de la casa" class="imagen-tabla"></td>
                     <td><?php echo $propiedad->precio ?></td>
                     <td>
-                        <form method="post" class="w-100">
+                        <form method="post" class="w-100" action="/propiedades/eliminar">
                             <input type="hidden" name="id" value="<?php echo $propiedad->id ?>">
                             <input type="hidden" name="tipo" value="propiedad">
                             <input type="submit" class="boton-rojo-block" value="Eliminar">

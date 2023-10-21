@@ -2,12 +2,16 @@ document.addEventListener('DOMContentLoaded', function(){
 
     eventListeners();
     darkMode();
+    // mostrarNotificacionPorTiempo(10);
 })
 
 function eventListeners(){
     
     const mobileMenu = document.querySelector('.mobile-menu');
     mobileMenu.addEventListener('click', navegacionResponsive);
+
+    const notificacionCrud = document.querySelector('body');
+    notificacionCrud.addEventListener('DOMContentLoaded', mostrarNotificacionPorTiempo(8) );
 }
 
 function darkMode(){
@@ -58,4 +62,15 @@ function navegacionResponsive(){
     //     navNavegacion.classList.remove("mostrar");
     // else
     //     navNavegacion.classList.add("mostrar");
+}
+
+
+function mostrarNotificacionPorTiempo(tiempo) {
+    const mensaje = document.querySelector('#notificacionCrud');
+    if(mensaje !== null){
+        setTimeout(function() {
+            mensaje.classList.add("invisible");
+    
+        }, tiempo * 1000); // Convierte el tiempo a milisegundos
+    }
 }

@@ -11,6 +11,9 @@
 
     &.exito{
         background-color: $verde;
+        &.invisible{
+            display: none;
+        }
     }
 }
 
